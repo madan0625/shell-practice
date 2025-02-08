@@ -6,3 +6,6 @@ password=$2
 echo "username is : ${username}"
 
 echo "password is : ${password}"
+
+echo "${username} ${password}"
+# sample program
