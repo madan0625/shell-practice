@@ -15,9 +15,12 @@
 
 echo "enter the username:"
 
-read -s username
+read -s USERNAME
+
+echo "username is :: $USERNAME"
 
 echo "enter the password"
 
-read -s password
+read -s PASSWORD
 
+echo "password is :: $PASSWORD"
