@@ -1,7 +1,23 @@
 #!/bin/bash
 
-echo "enter the username"
+#echo "enter the username"
 
-read USERNAME
+#read USERNAME
 
-echo "username is :: $USERNAME"
+#echo "username is :: $USERNAME"
+
+
+########################################
+
+# here we can use -s to hide the entering values at runtime
+
+#########################################
+
+echo "enter the username:"
+
+read -s username
+
+echo "enter the password"
+
+read -s password
+
