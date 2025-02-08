@@ -18,6 +18,8 @@ read -s username
 
 echo "username is: $username"
 
-read -s password
+read -s password           ##### in ubuntu read -s works with bash <filename> or ./<filename> sh in redhat 
 
 echo "password is: $password"
+
+
