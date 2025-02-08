@@ -15,12 +15,12 @@
 
 echo "enter the username:"
 
-read -s USERNAME
+read -s -p USERNAME
 
 echo "username is: $USERNAME"
 
 echo "enter the password"
 
-read -s PASSWORD
+read -s -p PASSWORD
 
 echo "password is: $PASSWORD"
