@@ -13,14 +13,11 @@
 
 #########################################
 
-echo "enter the username:"
 
-read -s -p USERNAME
+read -s username
 
-echo "username is: $USERNAME"
+echo "username is: $username"
 
-echo "enter the password"
+read -s password
 
-read -s -p PASSWORD
-
-echo "password is: $PASSWORD"
+echo "password is: $password"
