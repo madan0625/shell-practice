@@ -4,7 +4,7 @@ SUBJECTS=("telugu" "hindi" "english" "maths" "science" "social")
 TOTALM=100
 i=6
 
-for (( $i=0; $i>=0; $i++ ))
+for (( $i; $i>=0; $i++ ))
 do
 echo "enter subject name : ${SUBJECTS[$i]}"
 echo "enter marks :"
