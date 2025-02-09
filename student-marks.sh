@@ -2,17 +2,17 @@
 
 SUBJECTS=("telugu" "hindi" "english" "maths" "science" "social")
 TOTALM=100
+i=6
 
-
-for (( i=6; i>=0; i-- ))
+for (( $i=0; $i>=0; $i++ ))
 do
 echo "enter subject name : ${SUBJECTS[$i]}"
 echo "enter marks :"
 read MARKS
 echo "entered marks : $MARKS"
-PERCENTAGE=$(echo "scale=2; ($MARKS/$TOTALM)*100" | bc)
+#PERCENTAGE=$(echo "scale=2; ($MARKS/$TOTALM)*100" | bc)
 
-echo "secured percentage is : $PERCENTAGE%"
+#echo "secured percentage is : $PERCENTAGE%"
 done
 
 
