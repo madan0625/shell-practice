@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# VAR1="madan"
+
+# readonly VAR1
+
+# VAR1="kumar"
+
 VAR1="madan"
 
 readonly VAR1
 
-VAR1="kumar"
+echo "readonly name : $VAR1"
