@@ -41,18 +41,18 @@ then
 
 fi    
 
-apt list --installed nginx
+apt list --installed mysql
 
 if [ $? -ne 0 ]
 
 then 
      echo "nginx packages are not insttalled"
-     apt install nginx -y
+     apt install mysql
 
      if [ $? -ne 0]
 
      then
-         echo "git package installation is not successful"
+         echo "mysql package installation is not successful"
          exit 1
 
       else
@@ -60,6 +60,6 @@ then
       fi       
 
  else 
-      echo "nginx is already installed"
+      echo "mysql is already installed"
 
  fi         
