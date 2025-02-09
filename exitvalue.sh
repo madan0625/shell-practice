@@ -2,6 +2,7 @@
 
 USERID=$(id -u)
 
+echo "your user id is : $USERID"
 #if [ $USERID == 0 ]
  
  if [ $? -eq 0 ]
