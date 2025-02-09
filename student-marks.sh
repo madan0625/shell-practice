@@ -6,7 +6,7 @@ TOTALM=100
 
 for (( i=6; i>=0; i-- ))
 do
-echo "enter subject name : ${SUBJECTS[0]}"
+echo "enter subject name : ${SUBJECTS[$i]}"
 echo "enter marks :"
 read MARKS
 echo "entered marks : $MARKS"
