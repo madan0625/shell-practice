@@ -46,8 +46,18 @@ apt list --installed git
 if [ $? -ne 0 ]
 
 then 
-     echo "installing the packages"
+     echo "git packages are not insttalled"
      apt install git
+
+     if [ $? -ne 0]
+
+     then
+         echo "git package installation is not successful"
+         exit 1
+
+      else
+          echo "package installation is success"
+      fi       
 
  else 
       echo "git is already installed"
