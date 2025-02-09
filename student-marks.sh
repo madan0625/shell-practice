@@ -20,9 +20,9 @@ echo "total marks : $TOTAL"
 PERCENTAGE=$(echo "scale=2; ($TOTAL/$TOTALM)*100" | bc)
 echo "secured percentage is : $PERCENTAGE"
 
-value=$(PERCENTAGE)
+value=$PERCENTAGE
 
-if [ $value -ge 90  ]
+if [ $value >= 90  ]
 then
    echo "you got distinction with : $TOTAL marks"
 fi
