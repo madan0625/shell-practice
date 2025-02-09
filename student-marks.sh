@@ -22,7 +22,7 @@ echo "secured percentage is : $PERCENTAGE%"
 
 
 if [ $PERCENTAGE -ge 90  ]
-
+then
    echo "you got distinction with : $TOTAL marks"
 fi
 
