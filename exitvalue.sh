@@ -8,12 +8,13 @@ echo "set to root :"
 
 sudo su 
 
-if [ $? != 0 ]
+if [ $? -ne 0 ]
  
 #  if [ $USERID -ne 0 ]
  
  then
           echo "command is executed"
+          exit 1
   else
           echo "command is not executed"
          
