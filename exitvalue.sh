@@ -41,13 +41,13 @@ then
 
 fi    
 
-apt list --installed git
+apt list --installed nginx
 
 if [ $? -ne 0 ]
 
 then 
-     echo "git packages are not insttalled"
-     apt install git
+     echo "nginx packages are not insttalled"
+     apt install nginx -y
 
      if [ $? -ne 0]
 
@@ -60,6 +60,6 @@ then
       fi       
 
  else 
-      echo "git is already installed"
+      echo "nginx is already installed"
 
  fi         
