@@ -9,7 +9,7 @@ echo "enter subject name : ${SUBJECTS[0]}"
 echo "enter marks :"
 read MARKS
 echo "entered marks : $MARKS"
-PERCENTAGE=$(($MARKS/$TOTALM*100))
+PERCENTAGE=$(($MARKS / $TOTALM * 100))
 
 echo "secured percentage is : $PERCENTAGE"
 
