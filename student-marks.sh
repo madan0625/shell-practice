@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SUBJECTS=("telugu" "hindi" "english" "maths" "science" "social")
-TOTALM=100
+TOTALM=600
 i=6
 TOTAL=0
 
@@ -14,14 +14,11 @@ echo "entered marks : $MARKS"
 
 TOTAL=$((TOTAL+MARKS))
 
-echo "total marks : $TOTAL" 
-
-#PERCENTAGE=$(echo "scale=2; ($MARKS/$TOTALM)*100" | bc)
-
-#echo "secured percentage is : $PERCENTAGE%"
 done
 
-
+echo "total marks : $TOTAL"
+PERCENTAGE=$(echo "scale=2; ($TOTAL/$TOTALM)*100" | bc)
+echo "secured percentage is : $PERCENTAGE%"
 
 
 
