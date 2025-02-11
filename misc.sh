@@ -11,9 +11,9 @@ then
 
 fi     
 
-apt list --installed nginx
+apt list --installed nginx    # here in ubuntu exit staus is 0 either installed or not but in redhat if installed it will give '1' or else '0'. 
 
-if [ $? -eq 0 ]
+if [ $? -eq 0 ]         # usally -ne 0 but in ubuntu i'm giving eq o
 
 then
      echo "nginx is not installed and going to install it:"
