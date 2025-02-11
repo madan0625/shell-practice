@@ -11,7 +11,7 @@
 # step 3: add time stap to file -----------> date +%Y-%m-%D-%H:%M:%S  add this to file
 
 
-log_folder="var/log/shell-practice"
+log_folder="/var/log/shell-practice"
 
 script_name=$(echo $0 | cut -d "." -f1)
 
