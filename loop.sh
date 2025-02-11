@@ -28,14 +28,14 @@ for package in $@
 do
        apt list --installed $package
        
-       if [ $? -ne 0 ]
+       if [ $? -eq 0 ]
 
        then
             echo "$package is not installed goint to install"
             apt install $package
             echo "$package is installed"
 
-            if [ $? -ne 0 ]
+            if [ $? -eq 0 ]
 
             then
                   echo "$package installation is not success"
