@@ -32,7 +32,7 @@ do
 
        then
             echo "$package is not installed goint to install"
-            apt install $package
+            apt install $package -y
             echo "$package is installed"
 
             if [ $? -eq 0 ]
