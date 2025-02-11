@@ -41,7 +41,8 @@ do
                   echo "$package installation is not success"
                   exit 1
             else
-                  echo "$package installed successfully"     
+                  echo "$package installed successfully"  
+            fi         
         else
             echo "$package is already installed nothing to install it again!"
         fi        
