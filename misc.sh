@@ -7,7 +7,7 @@ if [ $USER_ID -ne 0 ]
 
 then
      echo "switch to root user :"
-     exit1
+     exit 1
 
 fi     
 
