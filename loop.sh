@@ -3,7 +3,7 @@
 
 ## for loop
 
-for i in {0..100}
+for i in {0..1000}
 
 do
       echo "no : $i"
