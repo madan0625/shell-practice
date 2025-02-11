@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+USER_ID=$(id -u)
+
+if [ $USER_ID -ne 0 ]
+
+then
+     echo "switch to root user :"
+     exit1
+
+fi     
+
+apt list --installed nginx
+
+if [ $? -eq 0 ]
+
+then
+     echo "nginx is not installed and going to install it:"
+
+     apt install nginx -y
+
+     ps -ef | grep nginx
+
+     if [ $? -ne 0 ]
+
+     then 
+          echo "nginx installation is not successful"
+
+          exit 1
+     else
+
+          echo "nginx installatin is successful"
+     fi
+
+else
+
+     echo "nginx is installed"
+
+fi     
