@@ -33,9 +33,9 @@ do
        then
             echo "$package is not installed goint to install"
             apt install $package -y
-            echo "$package is installed"
+            #echo "$package is installed"
 
-            if [ $? -eq 0 ]
+            if [ $? -ne 0 ]
 
             then
                   echo "$package installation is not success"
