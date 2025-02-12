@@ -1,8 +1,11 @@
 #!/bin/bash
 
 log_folder="/var/log/shell-practice"
+
 script_name=$(echo $0 | cut -d "." -f1)
+
 time_stamp=$(date +%Y-%m-%D-%H:%M:%S-%A)
+
 log_file="$log_folder/$script_name-$time_stamp.log"
 
 mkdir -p $log_folder
@@ -27,7 +30,7 @@ if [ $? -ne 0 ]
 
 then
      echo "$package is not installed:"
-     dnf install nginx -y &>>$log_file
+     dnf install -y nginx &>>$log_file
 
      if [ $? -ne 0 ]
      then
