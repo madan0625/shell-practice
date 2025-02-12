@@ -34,7 +34,7 @@ VALIDATE(){
       then
           echo -e "$2 is $R failed $N"   # here $2 is listed package ex: git, nginx etc........
        else 
-          echo "$2 is $G success $N"
+          echo -e "$2 is $G success $N"
        fi   
 }
 
