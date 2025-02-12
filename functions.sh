@@ -13,7 +13,7 @@ USER_ID=$(id -u)
 
 VALIDATE(){
       
-      if [ $1 -ne 0 ]
+      if [ $1 -ne 0 ]     ## here $1 recieves the exit status from validate function
       then
           echo "command is failed"
        else 
@@ -27,9 +27,9 @@ then
      echo "switch to root permissions:"
 fi
 
-apt list --installed nginx
+dnf list --installed nginx   #apt fot ubuntu
 
-VALIDATE $?
+VALIDATE $?  # exit status sends from here to validate function.
 
 # if [ $? -ne 0 ]
 
