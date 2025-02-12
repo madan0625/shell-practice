@@ -62,5 +62,5 @@ then
     #  fi
 
 else
-     echo "package is already installed nothing to install"             
+     echo -e "\e[33m package is already installed nothing to install"             
 fi
