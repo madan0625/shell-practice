@@ -38,4 +38,6 @@ then
      fi        
 else
      echo "$package is already installed:"
+
+fi     
 done
