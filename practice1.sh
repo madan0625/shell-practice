@@ -15,7 +15,7 @@ user_id=$(id -u)
 if [ $user_id -ne 0 ]
 
 then
-     echo "switch to root permissions :" &>>$log_file
+     echo "switch to root permissions :" &>> $log_file
      exit 1
 
 fi     
