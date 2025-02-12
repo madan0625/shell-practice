@@ -10,7 +10,7 @@ mkdir -p $LOG_FOLDER
 
 USER_ID=$(id -u)
 
-if [ USER_ID -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then
      echo "switch to root previligaes to execute:" | tee -a $LOG_FILE
      exit 1
