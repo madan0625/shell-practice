@@ -27,7 +27,7 @@ then
      echo "switch to root permissions:"
 fi
 
-dnf list --installed git      #nginx   #apt fot ubuntu
+apt list --installed git      #nginx   #apt fot ubuntu
 
 VALIDATE $?  "lisitng git" # exit status sends from here to validate function.
 
