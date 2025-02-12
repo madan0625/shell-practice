@@ -2,8 +2,8 @@
 
 log_folder="/var/log/shell-practice"
 script_name=$(echo $0 | cut -d "." -f1)
-time_stamp=$(date +%Y-%m-%D-%H:%M:%S-%A)
-log_file="$log_folder/$script_name-$time_stamp.log"
+timestamp=$(date +%Y-%m-%D-%H:%M:%S-%A)
+log_file="$log_folder/$script_name-$timestamp.log"
 
 mkdir -p $log_folder
 
@@ -36,8 +36,8 @@ do
 
     then
          echo "$package is not installed going to install:" | tee -a $log_file
-         apt install $package -y | tee -a $LOG_FILE
-
+         apt install $package -y 
+         
          if [ $? -ne 0 ]
          then
              echo "$package installation status is unsuccessful:" | tee -a $log_file
