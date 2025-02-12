@@ -11,6 +11,16 @@
 
 USER_ID=$(id -u)
 
+CHECKROOT(){
+
+    if [ $USER_ID -ne 0 ]
+
+    then
+        echo "switch to root permissions:"    #this block behlaf of user_id block
+        exit 1
+    fi
+}
+
 VALIDATE(){
       
       if [ $1 -ne 0 ]     ## here $1 recieves the exit status from validate function
@@ -21,12 +31,14 @@ VALIDATE(){
        fi   
 }
 
-if [ $USER_ID -ne 0 ]
+CHECKROOT   # 
 
-then
-     echo "switch to root permissions:"
-     exit 1
-fi
+# if [ $USER_ID -ne 0 ]
+
+# then
+#      echo "switch to root permissions:"
+#      exit 1
+# fi
 
 apt list --installed git      #nginx   #apt fot ubuntu , dnf in redhat
 
@@ -36,9 +48,10 @@ if [ $? -ne 0 ]
 
 then
      echo "package is not installed going to install:"
-     apt install git -y
+     apt install git -y                                    
 
-     VALIDATE $? "package installaion is happening:"
+     VALIDATE $? "package installaion is happening:"      ## this block is behalf of below condition 
+
 
     #  if [ $? -ne 0 ]
     #  then
