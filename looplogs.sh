@@ -22,7 +22,7 @@ fi
 
 USAGE(){
 
-          echo "USAGE:: sudo bash looplogs.sh package1 package2 "
+          echo "USAGE:: sudo bash looplogs.sh package1 package2 " &>>$log_file
           exit 1
 }
 
@@ -36,13 +36,13 @@ fi
 for package in $@ 
 
 do
-       apt list --installed $package
+       apt list --installed $package &>>$log_file
        
        if [ $? -eq 0 ]
 
        then
             echo "$package is not installed goint to install"
-            apt install $package -y
+            apt install $package -y &>>$log_file
             #echo "$package is installed"
 
             if [ $? -ne 0 ]
@@ -51,7 +51,7 @@ do
                   echo "$package installation is not success"
                   exit 1
             else
-                  echo "$package installed successfully"  
+                  echo "$package installed successfully"
             fi         
         else
             echo "$package is already installed nothing to install it again!"
