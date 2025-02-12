@@ -25,13 +25,29 @@ if [ $USER_ID -ne 0 ]
 
 then
      echo "switch to root permissions:"
+     exit 1
 fi
 
-apt list --installed git      #nginx   #apt fot ubuntu
+apt list --installed git      #nginx   #apt fot ubuntu , dnf in redhat
 
 VALIDATE $?  "lisitng git" # exit status sends from here to validate function.
 
-# if [ $? -ne 0 ]
+if [ $? -ne 0 ]
 
-# then
-# fi
+then
+     echo "package is not installed going to install:"
+     apt install nginx -y
+
+     VALIDATE $? "package installaion is happening:"
+
+    #  if [ $? -ne 0 ]
+    #  then
+    #      echo "package installation is unsuccssful"
+    #      exit 1
+    #  else
+    #      echo "package installation is successful:"
+    #  fi
+
+else
+     echo "package is already installed nothing to install"             
+fi
