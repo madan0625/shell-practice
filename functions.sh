@@ -15,9 +15,9 @@ VALIDATE(){
       
       if [ $1 -ne 0 ]     ## here $1 recieves the exit status from validate function
       then
-          echo "command is failed"
+          echo "$2 is failed"   # here $2 is listed package ex: git, nginx etc........
        else 
-          echo "command is success"
+          echo "$2 is success"
        fi   
 }
 
@@ -29,7 +29,7 @@ fi
 
 dnf list --installed git      #nginx   #apt fot ubuntu
 
-VALIDATE $?  # exit status sends from here to validate function.
+VALIDATE $?  "lisitng git" # exit status sends from here to validate function.
 
 # if [ $? -ne 0 ]
 
