@@ -1,5 +1,8 @@
 #!/bin/bash
 # function: need some inputs to work and get output
+#
+
+
 
 
 #      FUNC_NAME(){
@@ -10,6 +13,10 @@
 
 
 USER_ID=$(id -u)
+
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 CHECKROOT(){
 
@@ -25,9 +32,9 @@ VALIDATE(){
       
       if [ $1 -ne 0 ]     ## here $1 recieves the exit status from validate function
       then
-          echo "$2 is failed"   # here $2 is listed package ex: git, nginx etc........
+          echo -e "$2 is $R failed $N"   # here $2 is listed package ex: git, nginx etc........
        else 
-          echo "$2 is success"
+          echo "$2 is $G success $N"
        fi   
 }
 
@@ -62,5 +69,5 @@ then
     #  fi
 
 else
-     echo -e "\e[33m package is already installed nothing to install"             
+     echo -e " $G package is already installed nothing to install $N"             
 fi
