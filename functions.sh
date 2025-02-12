@@ -20,7 +20,7 @@ if [ $USER_ID -ne 0 ]
 
 then
      echo "switch to root permissions:"
-
+fi
 
 apt list --installed git
 
