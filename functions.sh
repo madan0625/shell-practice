@@ -22,7 +22,7 @@ then
      echo "switch to root permissions:"
 fi
 
-apt list --installed git
+apt list --installed nginx
 
 VALIDATE $?
 
