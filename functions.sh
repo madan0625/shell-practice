@@ -13,7 +13,12 @@ USER_ID=$(id -u)
 
 VALIDATE(){
       
-      echo "exit status is : $1"
+      if [ $1 -ne 0]
+      then
+          echo "command is failed"
+       else 
+          echo "command is success"
+       fi   
 }
 
 if [ $USER_ID -ne 0 ]
