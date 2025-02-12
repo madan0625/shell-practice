@@ -12,7 +12,7 @@ USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]
 then
-     echo "switch to root previligaes to execute:" | tee -a$LOG_FILE
+     echo "switch to root previligaes to execute:" | tee -a $LOG_FILE
      exit 1
 fi
 
@@ -30,24 +30,24 @@ fi
 
 for package in $@
 do
-    apt list --installed $package | tee -a$LOG_FILE
+    apt list --installed $package
 
-    if [ $? -ne 0 ]
+    if [ $? -eq 0 ]
 
     then
-         echo "$package is not installed going to install:" | tee -a$LOG_FILE
+         echo "$package is not installed going to install:" | tee -a $LOG_FILE
          apt install $package -y
 
          if [ $? -ne 0 ]
          then
-             echo "$package installation status is unsuccessful:" | tee -a$LOG_FILE
+             echo "$package installation status is unsuccessful:" | tee -a $LOG_FILE
              exit 1
          else
-             echo "$package installation status is successful:" | tee -a$LOG_FILE
+             echo "$package installation status is successful:" | tee -a $LOG_FILE
          fi
 
     else
-         echo "$package is already installed nothing to install:" | tee -a$LOG_FILE
+         echo "$package is already installed nothing to install:" | tee -a $LOG_FILE
 
     fi                  
 done
