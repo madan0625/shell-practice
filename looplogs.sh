@@ -20,29 +20,29 @@ then
 
 fi
 
-USAGE(){
+# USAGE(){
 
-          echo "USAGE:: sudo bash looplogs.sh package1 package2 " &>>$log_file
-          exit 1
-}
+#           echo "USAGE:: sudo bash looplogs.sh package1 package2 " &>>$log_file
+#           exit 1
+# }
 
-if [ $# -eq 0 ]
+# if [ $# -eq 0 ]
 
-then
-      USAGE
-fi
+# then
+#       USAGE
+# fi
 
 
 for package in $@ 
 
 do
-       apt list --installed $package &>>$log_file
+       dnf list installed $package &>>$log_file
        
-       if [ $? -eq 0 ]
+       if [ $? -ne 0 ]
 
        then
             echo "$package is not installed goint to install"
-            apt install $package -y &>>$log_file
+            dnf install $package -y &>>$log_file
             #echo "$package is installed"
 
             if [ $? -ne 0 ]
