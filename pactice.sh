@@ -36,7 +36,7 @@ do
 
     then
          echo "$package is not installed going to install:" | tee -a $LOG_FILE
-         apt install $package -y
+         apt install $package -y | tee -a $LOG_FILE
 
          if [ $? -ne 0 ]
          then
