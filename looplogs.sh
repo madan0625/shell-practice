@@ -14,7 +14,7 @@ user_id=$(id -u)
 if [ $user_id -ne 0 ]
 
 then
-     echo "switch to rootuser" &>>$log_file    # &>> appends the output data into logfile.log
+     echo "switch to rootuser" | tee -a $log_file    # &>> appends the output data into logfile.log
 
      exit 1
 
@@ -22,7 +22,7 @@ fi
 
 USAGE(){
 
-          echo "USAGE:: sudo bash looplogs.sh package1 package2 " &>>$log_file
+          echo "USAGE:: sudo bash looplogs.sh package1 package2 " | tee -a $log_file
           exit 1
 }
 
@@ -36,13 +36,13 @@ fi
 for package in $@ 
 
 do
-       apt list --installed $package &>>$log_file
+       apt list --installed $package | tee -a $log_file
        
        if [ $? -eq 0 ]
 
        then
             echo "$package is not installed goint to install"
-            apt install $package -y &>>$log_file
+            apt install $package -y | tee -a $log_file
             #echo "$package is installed"
 
             if [ $? -ne 0 ]
