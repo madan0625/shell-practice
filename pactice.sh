@@ -12,14 +12,14 @@ USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]
 then
-     echo "switch to root previligaes to execute:" | tee -a $log_file
+     echo "switch to root previligaes to execute:" &>>$log_file
      exit 1
 fi
 
 
 
 USAGE(){
-          echo "USAGE:: no packages is paased - package1,package2..." | tee -a $log_file
+          echo "USAGE:: no packages is paased - package1,package2..." &>>$log_file
           exit 1
 }
 
@@ -35,19 +35,19 @@ do
     if [ $? -eq 0 ]
 
     then
-         echo "$package is not installed going to install:" | tee -a $log_file
+         echo "$package is not installed going to install:" &>>$log_file
          apt install $package -y 
-         
+
          if [ $? -ne 0 ]
          then
-             echo "$package installation status is unsuccessful:" | tee -a $log_file
+             echo "$package installation status is unsuccessful:" &>>$log_file
              exit 1
          else
-             echo "$package installation status is successful:" | tee -a $log_file
+             echo "$package installation status is successful:" &>>$log_file
          fi
 
     else
-         echo "$package is already installed nothing to install:" | tee -a $log_file
+         echo "$package is already installed nothing to install:" &>>$log_file
 
     fi                  
 done
