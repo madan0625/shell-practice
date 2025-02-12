@@ -1,12 +1,12 @@
 #!/bin/bash
 
-log_folder="/var/log/shell-practice"
+log_folder="/var/log/shellpractice"
 
 script_name=$(echo $0 | cut -d "." -f1)
 
 time_stamp=$(date +%Y-%m-%D-%H:%M:%S-%A)
 
-log_file="/$log_folder/$script_name-$time_stamp.log"
+log_file="$log_folder/$script_name-$time_stamp.log"
 
 mkdir -p $log_folder
 
