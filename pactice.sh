@@ -32,7 +32,7 @@ for package in $@
 do
     apt list --installed $package | tee -a $LOG_FILE
 
-    if [ $? -eq 0 ]
+    if [ $? -ne 0 ]
 
     then
          echo "$package is not installed going to install:" | tee -a $LOG_FILE
