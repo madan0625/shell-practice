@@ -41,19 +41,22 @@ then
 
 fi    
 
-apt list --installed nginx
+apt list --installed nginx # before installing checking whether it is insatlled or not
 
-if [ $? -eq 0 ]
+if [ $? -eq 0 ]  # in this step $? gives previous command result either 0 or 1 and checks. if 1 != 0 or else 0 != 0
 
 then 
-     echo "nginx packages are not insttalled"
-     apt install nginx -y
+     echo "nginx packages are not insttalled"     # in this step depend on above $? status if condtion is true it will execute here or 
+                                                  # goto else block
+     
+     apt install nginx -y               # if not installed, install with this command
 
-     if [ $? -eq 0]
+     if [ $? -eq 0]        # here $? checks previous executed command  if it is installed it will give 0 or else gives 1
+                           # check 1 -ne 0 it will goto 'then' block and exit from script, if 0 -ne 0 it will perform 'else' block code
 
      then
          echo "nginx package installation is not successful"
-         exit 1
+         exit 1            # exit 1 gives you success or unsucess if exit o perform next steps, if 1 exit from the script
 
       else
           echo "package installation is success"

@@ -17,7 +17,7 @@ TOTAL=$((TOTAL+MARKS))
 done
 
 echo "total marks : $TOTAL"
-PERCENTAGE=$(echo "scale=2; ($TOTAL/$TOTALM)*100")
+PERCENTAGE=$(echo "scale=2; ($TOTAL/$TOTALM)*100" | bc)
 echo "secured percentage is : $PERCENTAGE"
 
 value=$PERCENTAGE
