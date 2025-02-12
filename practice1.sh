@@ -15,7 +15,7 @@ user_id=$(id -u)
 if [ $user_id -ne 0 ]
 
 then
-     echo "switch to root permissions :" &>> $log_file
+     echo "switch to root permissions :" &>>$log_file
      exit 1
 
 fi     
@@ -24,23 +24,23 @@ for package in $@
 
 do
 
-dnf list installed $package &>> $log_file
+  dnf list installed $package
 
-if [ $? -ne 0 ]
+  if [ $? -ne 0 ]
 
-then
+   then
      echo "$package is not installed:"
-     dnf install -y $package &>> $log_file
+     dnf install -y $package &>>$log_file
 
-     if [ $? -ne 0 ]
-     then
+      if [ $? -ne 0 ]
+      then
          echo "$package installation is failure:"
          exit 1
-     else
+      else
          echo "$package installatin is success:"
-     fi        
-else
+      fi        
+    else
      echo "$package is already installed:"
 
-fi     
+  fi     
 done
