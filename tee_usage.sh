@@ -53,7 +53,7 @@ do
      apt list --installed $package | tee -a $log_file
      VALIDATE $? "listing $package..."
 
-     if [ $? -eq 0]
+     if [ $? -eq 0 ]
 
         then
              echo "$package is not installed going to install:" 
