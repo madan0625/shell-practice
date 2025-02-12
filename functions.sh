@@ -36,7 +36,7 @@ if [ $? -ne 0 ]
 
 then
      echo "package is not installed going to install:"
-     apt install nginx -y
+     apt install git -y
 
      VALIDATE $? "package installaion is happening:"
 
