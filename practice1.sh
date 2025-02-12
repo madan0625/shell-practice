@@ -24,13 +24,13 @@ for package in $@
 
 do
 
-dnf list installed $package &>>$log_file
+dnf list installed $package &>> $log_file
 
 if [ $? -ne 0 ]
 
 then
      echo "$package is not installed:"
-     dnf install -y nginx &>>$log_file
+     dnf install -y $package &>> $log_file
 
      if [ $? -ne 0 ]
      then
