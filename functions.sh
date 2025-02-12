@@ -23,7 +23,7 @@ CHECKROOT(){
     if [ $USER_ID -ne 0 ]
 
     then
-        echo "switch to root permissions:"    #this block behlaf of user_id block
+        echo -e "$R switch to root permissions: $N"    #this block behlaf of user_id block
         exit 1
     fi
 }
