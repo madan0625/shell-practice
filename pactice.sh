@@ -2,7 +2,7 @@
 
 log_folder="/var/log/shell-practice"
 script_name=$(echo $0 | cut -d "." -f1)
-timestamp=$(date +%Y-%m-%D-%H:%M:%S-%A)
+timestamp=$(date +%Y-%m-%d-%H:%M:%S-%A)
 log_file="$log_folder/$script_name-$timestamp.log"
 
 mkdir -p $log_folder
@@ -36,7 +36,7 @@ do
 
     then
          echo "$package is not installed going to install:" &>>$log_file
-         apt install $package -y 
+         apt install $package -y &>>$log_file 
 
          if [ $? -ne 0 ]
          then
