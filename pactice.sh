@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG_FOLDER="/var/log/shell-practice"
-SCRIT_NAME=$(echo $0 | cut -d "." -f1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%D-%H:%M:%S-%A)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 
