@@ -58,6 +58,7 @@ do
         then
              echo "$package is not installed going to install:" 
              apt install $package -y &>>$log_file
+#            dnf install $package -y &>>$log_file
              VALIDATE $?       
 
         else
