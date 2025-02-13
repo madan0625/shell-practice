@@ -23,4 +23,4 @@ while IFS= read -r line
 do
       echo "deleting lines: $line"
 
-done >>> $FILES
+done <<< $FILES
