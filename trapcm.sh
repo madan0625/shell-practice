@@ -1,6 +1,6 @@
 #!/bin/bash
 
-trap(){
+failure(){
 
     echo "error at $1:$2"
 }
