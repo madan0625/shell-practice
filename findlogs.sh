@@ -22,5 +22,6 @@ echo "files :: $FILES"
 while IFS= read -r line
 do
       echo "deleting lines: $line"
+      rm -rf $line
 
 done <<< $FILES
