@@ -14,3 +14,7 @@ else
     echo "$SOURCE_DIR $R is does not exists: $N"
     exit 1
 fi    
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +10)
+
+echo "files :: $FILES"
